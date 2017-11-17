@@ -108,3 +108,13 @@ body {
     font-weight: bold;
     color: fb16bb;
 }
+
+.pure-menu-item {
+    height: auto;
+}
+
+img {
+
+  max-width: 100%; /* Add !important if needed. */
+
+}
