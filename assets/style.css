@@ -1,4 +1,5 @@
 .custom-wrapper {
+    border-bottom: solid 1px white;
     max-width: 1024;
     color: white;
     height: 2.0em;
