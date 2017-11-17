@@ -126,6 +126,16 @@ blink {
   color:16d41a;
 }
 
+.headline-message {
+    font-size: 300%;
+}
+
+@media screen and (min-width: 48em) {
+    .headline-message {
+	font-size: 600%;
+    }
+}
+
 @-webkit-keyframes blink {
   to { visibility: hidden; }
 }
