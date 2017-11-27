@@ -153,6 +153,11 @@ blink {
     font-size: 300%;
 }
 
+.headline-button {
+    font-size:140%;
+    margin: .5em;
+}
+
 @media screen and (min-width: 48em) {
     .headline-message {
 	font-size: 600%;
