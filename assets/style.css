@@ -122,8 +122,14 @@ body {
 
 .download-button {
     margin-top:3em;
+    margin-bottom:3em;    
     text-align:center;
     font-size:120%;
+}
+
+.download-platform {
+    display:block;
+    margin:auto;
 }
 
 img {
