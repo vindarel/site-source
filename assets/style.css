@@ -2,12 +2,13 @@
     border-bottom: solid 1px white;
     max-width: 1024;
     color: white;
-    height: 2.0em;
+    height: 3.0em;
     overflow: hidden;
     -webkit-transition: height 0.5s;
     -moz-transition: height 0.5s;
     -ms-transition: height 0.5s;
     transition: height 0.5s;
+    line-height: 2em;
 }
 
 .custom-wrapper.open {
@@ -111,17 +112,23 @@ body {
 
 .pure-menu-item {
     height: auto;
+    text-transform: lowercase;
+}
+
+.download-button {
+    margin-top:3em;
+    text-align:center;
 }
 
 img {
-  max-width: 100%; /* Add !important if needed. */
+  max-width: 100%;
 }
 
 blink {
-  -webkit-animation: blink 3.5s steps(5, start) infinite;
-  -moz-animation:    blink 3.5s steps(5, start) infinite;
-  -o-animation:      blink 3.5s steps(5, start) infinite; 
-  animation:         blink 3.5s steps(5, start) infinite;
+  -webkit-animation: blink 1.5s steps(5, start) infinite;
+  -moz-animation:    blink 1.5s steps(5, start) infinite;
+  -o-animation:      blink 1.5s steps(5, start) infinite; 
+  animation:         blink 1.5s steps(5, start) infinite;
   font-size: 85%;
   color:16d41a;
 }
