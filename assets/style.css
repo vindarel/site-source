@@ -153,6 +153,19 @@ blink {
     font-size: 300%;
 }
 
+.feature-message {
+    font-size: 300%;
+}
+
+.feature-description {
+    padding-left:1em;
+}
+
+.feature {
+    padding-top:1em;
+    padding-bottom:10em;
+}
+
 .headline-button {
     font-size:140%;
     margin: .5em;
