@@ -171,12 +171,19 @@ blink {
     margin: .5em;
 }
 
+.footer-message {
+    font-size: 200%;
+}
+
 @media screen and (min-width: 48em) {
     .headline-message {
 	font-size: 600%;
     }
     .call-out {
 	text-align:left;
+    }
+    .footer-message {
+	font-size: 450%;
     }
 }
 
