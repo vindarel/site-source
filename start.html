@@ -1,66 +1,63 @@
-<!doctype html>
 <html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="initial-scale=1">
-<title>nEXT Home Page</title>
-	<style>
-		.center {
-			display: block;
-			margin: auto;
-			padding: 10px;
-			width: 20%;
-		}
-		.quick_start_keys{
-			font-family: Helvetica, Arial, "sans-serif";
-			margin:auto;
-			display: block;
-			width: 40%;
-		}
-		.code {
-			padding: 0.2em 0.4em;
-			margin: 0;
-			font-weight: bold;
-			background-color: rgba(27,31,35,1);
-			border-radius: 3px;
-		}
-		body {
-			background-color: black;
-		}
-		h2 {
-			margin-top: 0px;
-			font-size: 2vw;
-			color: white
-		}
-		li{
-  			margin-bottom: 15px;
-			font-size: 1.25vw;
-			color: white;
-			padding: 5px 0;
-		}
-		ul {
-		  list-style: none;
-		  columns: 2;
-		  -webkit-columns: 2;
-		  -moz-columns: 2;
-		}		
-	</style>
-</head>
-<body>
-	<a href="https://next-browser.github.io/">
-		<img class="center" alt="nEXT Logo" src="https://next-browser.github.io/assets/icon_512x512.png">
-	</a>
-	<div class="quick_start_keys">
-		<h2>Quick Start Keys</h2>
-		<ul>
-			<li><span class="code">C-l:</span> Load URL in tab</li>
-			<li><span class="code">S-l:</span> Load URL in new tab</li>
-			<li><span class="code">C-x b:</span> Switch tab</li>
-			<li><span class="code">C-b:</span> Backwards history</li>
-			<li><span class="code">C-f:</span> Forwards history</li>
-			<li><span class="code">C-c C-X:</span> Quit</li>
-		</ul>
-	</div>
-<body>
-</body>
+  <head>
+    <title>nEXT</title>
+    <style>
+      body {
+      background-color: black;
+      color: white;
+      padding-left:4em;
+      padding-top:2em;
+      }
+      td {
+      padding:0.4em;
+      font-size:120%;
+      }
+      .code {
+      font-family: monospace;
+      font-weight: bold;
+      }
+      th, td {
+      border-bottom: 1px solid #ddd;
+      }
+      .gray {
+      text-transform:uppercase;
+      color:#292929;
+      }
+      .rainbow {
+      font-size:700%;
+      font-family: helvetica;
+      }
+      .rainbow .n {
+      font-weight: bold;
+      color: fa1516;
+      }
+      .rainbow .e {
+      font-weight: bold;
+      color: fcfc17;
+      }
+      .rainbow .x {
+      font-weight: bold;
+      color: 16d41a;
+      }
+      .rainbow .t {
+      font-weight: bold;
+      color: fb16bb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rainbow">
+      <span class="n">n</span><span class="e">E</span><span class="x">X</span><span class="t">T</span><span class="gray">browser</span>
+    </div>
+    <div class="quick_start_keys">
+      <table>
+	<tr><td class="code">C-l:</td><td>Load URL in tab</td></tr>
+	<tr><td class="code">S-l:</td><td>Load URL in new tab</td></tr>
+	<tr><td class="code">C-x b:</td><td>Switch tab</td></tr>
+	<tr><td class="code">C-b:</td><td>Backwards history</td></tr>
+	<tr><td class="code">C-f:</td><td>Forwards history</td></tr>
+	<tr><td class="code">C-c C-X:</td><td>Quit</td></tr>
+      </table>
+    </div>
+  </body>
 </html>
