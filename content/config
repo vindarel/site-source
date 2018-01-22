@@ -1,0 +1,13 @@
+:site-name
+Example Blog
+
+:template
+main.html
+
+; A comment 
+:nav
+$(xml (:nav
+         (:ul 
+           (:li (:a :href (page-address "index") "Home"))
+           (:li (:a :href (page-address "archive") "Archives")))))
+; Another comment

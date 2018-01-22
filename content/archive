@@ -1,0 +1,18 @@
+:title
+Archive
+
+:contents
+$(xml
+   (:h2 (str title))
+   (loop for page in (get-pages "pages")
+         do (htm (:article (:h3 (:a :href (page-address page)
+                                   (str (page-title page))))
+                   (:div :class "article-info"
+                     (:div :class "author" (str (page-author page)))
+	             (:div :class "date" (str (page-date page))))
+	           (:p (str (first-line (get-content page :content)))
+		   (:p (:a :href (page-address page)
+		       	   "Keep reading...")))))))
+
+:depends
+pages/

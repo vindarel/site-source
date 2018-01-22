@@ -1,0 +1,6 @@
+:contents markup=markdown
+HI! $(foo)
+
+:cl-environment
+(defun foo ()
+  "I'm a function!")
