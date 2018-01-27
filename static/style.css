@@ -170,8 +170,9 @@ blink {
 }
 
 .headline-title {
-    font-size: 1600%;
+    font-size: 2275%;
     margin:0em;
+    text-decoration:none;
 }
 
 .feature-message {

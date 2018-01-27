@@ -2,6 +2,6 @@
 $(xml
    (:div :class "pure-g splash"
          (:div :class "pure-u-1" :style "text-align:center"
-               (:h1 :class "headline-title rainbow"
+               (:a :href "#features" :class "headline-title rainbow"
                     (:span :class "n" "n")(:span :class "e" "e")(:span :class "x" "x")(:span :class "t" "t"))
                (:h1 :class "headline-message" "Be Productive" (:blink "_")))))
