@@ -79,7 +79,7 @@
 }
 
 body {
-    max-width: 1024;
+    max-width: 1024px;
     margin:auto;
     background-color: black;
     color: white;
@@ -100,19 +100,19 @@ body {
 
 .rainbow .n {
     font-weight: bold;
-    color: #fa1516;
+    color: #3144ff;
 }
 .rainbow .e {
     font-weight: bold;
-    color: #fcfc17;
+    color: #00bc3f;
 }
 .rainbow .x {
     font-weight: bold;
-    color: #16d41a;
+    color: #ffff00;
 }
 .rainbow .t {
     font-weight: bold;
-    color: #fb16bb;
+    color: #ff0000;
 }
 
 .pure-menu-item {
@@ -130,6 +130,10 @@ body {
 .download-platform {
     display:block;
     margin:auto;
+}
+
+nav {
+    padding-bottom: 1em;
 }
 
 img {
