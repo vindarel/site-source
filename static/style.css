@@ -2,18 +2,18 @@
     border-bottom: solid 1px white;
     max-width: 1024;
     color: white;
-    height: 3.5em;
+    height: 2em;
     overflow: hidden;
     -webkit-transition: height 0.5s;
     -moz-transition: height 0.5s;
     -ms-transition: height 0.5s;
     transition: height 0.5s;
-    line-height: 3em;
     font-size:110%;
+    padding-top: 2em;
 }
 
 .custom-wrapper.open {
-    height: 20em;
+    height: 15em;
 }
 
 .custom-menu-3 {
@@ -92,6 +92,12 @@ body {
 .pure-menu-heading {
     text-transform:none;
     font-weight: bold;
+}
+
+.pure-menu-brand {
+    text-transform:none;
+    font-weight: bold;
+    text-decoration:none;
 }
 
 .rainbow {

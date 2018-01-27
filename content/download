@@ -1,0 +1,6 @@
+:title
+Download
+
+:contents
+$(xml
+  (:h2 (str title)))
