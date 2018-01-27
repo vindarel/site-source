@@ -1,7 +1,6 @@
 .custom-wrapper {
-    border-bottom: solid 1px white;
+    border-bottom: solid 1px rgb(200, 200, 200);
     max-width: 1024;
-    color: white;
     height: 2em;
     overflow: hidden;
     -webkit-transition: height 0.5s;
@@ -10,6 +9,10 @@
     transition: height 0.5s;
     font-size:110%;
     padding-top: 2em;
+}
+
+a {
+    color: white;
 }
 
 .custom-wrapper.open {
@@ -24,8 +27,8 @@
     width: 34px;
     height: 34px;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 2em;
+    right: .5em;
     display: none;
 }
 
@@ -83,10 +86,12 @@ body {
     margin:auto;
     background-color: black;
     color: white;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .pure-menu-link {
-    color: white;
+    color: rgb(220, 220, 220);
 }
 
 .pure-menu-heading {
