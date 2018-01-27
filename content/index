@@ -3,5 +3,13 @@ $(xml
    (:div :class "pure-g splash"
          (:div :class "pure-u-1" :style "text-align:center"
                (:a :href "#features" :class "headline-title rainbow"
-                    (:span :class "n" "n")(:span :class "e" "e")(:span :class "x" "x")(:span :class "t" "t"))
-               (:h1 :class "headline-message" "Be Productive" (:blink "_")))))
+                   (:span :class "n" "n")
+                   (:span :class "e" "e")
+                   (:span :class "x" "x")
+                   (:span :class "t" "t"))
+               (:h1 :class "headline-message" "Be Productive" (:blink "_"))))
+   (:div :class "pure-g"
+         (:div :class "pure-u-1" :style "text-align:center"
+               (:a :class "pure-button headline-button" :href (page-address "download") "Download")
+               (:a :class "pure-button headline-button" :href "https://github.com/next-browser/next" "☆ Star on Github")
+               (:a :class "pure-button headline-button" :href "https://github.com/next-browser/next/blob/master/documents/MANUAL.org" "Manual"))))
