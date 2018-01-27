@@ -13,7 +13,7 @@ $(xml (:nav
                              (:span :class "n" "n")
                              (:span :class "e" "e")
                              (:span :class "x" "x")
-                             (:span :class "t" "t"))
+                             (:span :class "t" "t") " browser")
                          (:a :href "#" :class "custom-toggle" :id "toggle"
                              (:s :class "bar")
                              (:s :class "bar"))))

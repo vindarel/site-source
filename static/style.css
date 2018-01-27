@@ -139,6 +139,7 @@ body {
 }
 
 .download-platform {
+    padding-bottom: 5em;
     display:block;
     margin:auto;
 }
