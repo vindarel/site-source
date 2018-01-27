@@ -100,19 +100,19 @@ body {
 
 .rainbow .n {
     font-weight: bold;
-    color: fa1516;
+    color: #fa1516;
 }
 .rainbow .e {
     font-weight: bold;
-    color: fcfc17;
+    color: #fcfc17;
 }
 .rainbow .x {
     font-weight: bold;
-    color: 16d41a;
+    color: #16d41a;
 }
 .rainbow .t {
     font-weight: bold;
-    color: fb16bb;
+    color: #fb16bb;
 }
 
 .pure-menu-item {
