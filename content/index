@@ -10,6 +10,12 @@
                 (:video :width "100%"
                         (:source :src (concatenate 'string "/static/" video-file ".mov"))
                         (:source :src (concatenate 'string "/static/" video-file ".webm")))))))
+(defun feature-row-text (heading description)
+  (xml
+    (:div :class "pure-g feature"
+          (:div :class "pure-u-1"
+                (:h1 :class "feature-message" (str heading))
+                (:p :class "feature-description" (str description))))))
 
 :contents
 $(xml
