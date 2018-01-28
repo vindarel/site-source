@@ -1,0 +1,41 @@
+body {
+    background-color: black;
+    color: white;
+    padding-left:4em;
+    padding-top:2em;
+}
+a {
+    color:white;
+}
+.code {
+    font-family: monospace;
+    font-weight: bold;
+}
+td {
+    padding:0.4em;
+    font-size:120%;
+    border-bottom: 1px solid #ddd;
+}
+.gray {
+    color:#292929;
+}
+.rainbow {
+    font-size:600%;
+    font-family: helvetica;
+}
+.rainbow .n {
+    font-weight: bold;
+    color: #3144ff;
+}
+.rainbow .e {
+    font-weight: bold;
+    color: #00bc3f;
+}
+.rainbow .x {
+    font-weight: bold;
+    color: #ffff00;
+}
+.rainbow .t {
+    font-weight: bold;
+    color: #ff0000;
+}

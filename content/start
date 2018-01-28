@@ -3,4 +3,29 @@ start.html
 
 :contents
 $(xml
-  (:h1 "Hello World"))
+   (:div :class "rainbow"
+         (:span :class "n" "n")
+         (:span :class "e" "e")
+         (:span :class "x" "x")
+         (:span :class "t" "t")
+         (:span :class "gray") "browser")
+   (:div :class "quick_start_keys"
+         (:table :cellspacing "0"
+                 (:tr
+                  (:td :class "code" "C-l:")
+                  (:td "Load URL in tab"))
+                 (:tr
+                  (:td :class "code" "M-l:")
+                  (:td "Load URL in new tab"))
+                 (:tr
+                  (:td :class "code" "C-x b:")
+                  (:td "Switch tab"))
+                 (:tr
+                  (:td :class "code" "C-b:")
+                  (:td "Backwards history"))
+                 (:tr
+                  (:td :class "code" "C-f:")
+                  (:td "Forwards history"))
+                 (:tr
+                  (:td :class "code" "C-x C-c:")
+                  (:td "Exit")))))
