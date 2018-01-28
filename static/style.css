@@ -176,7 +176,8 @@ blink {
 }
 
 .feature-message {
-    font-size: 300%;
+    font-size: 350%;
+    margin-top: 0em;
 }
 
 .feature-description {
@@ -184,7 +185,7 @@ blink {
 }
 
 .feature {
-    padding-top:10em;
+    padding-top:12em;
 
 }
 
