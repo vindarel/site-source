@@ -8,7 +8,7 @@ $(xml
          (:span :class "e" "e")
          (:span :class "x" "x")
          (:span :class "t" "t")
-         (:span :class "gray") "browser")
+         (:span :class "gray" "browser"))
    (:div :class "quick_start_keys"
          (:table :cellspacing "0"
                  (:tr
