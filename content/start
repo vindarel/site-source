@@ -28,4 +28,7 @@ $(xml
                   (:td "Forwards history"))
                  (:tr
                   (:td :class "code" "C-x C-c:")
-                  (:td "Exit")))))
+                  (:td "Exit"))
+                 (:tr
+                  (:td :colspan "2" :style "border:none;padding-left:0.2em;"
+                       (:a :href "https://github.com/next-browser/next/blob/master/documents/MANUAL.org" "Manual"))))))
