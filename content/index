@@ -1,3 +1,16 @@
+:cl-environment
+(defun feature-row (video-file heading description)
+  (xml
+    (:div :class "pure-g feature"
+          (:div :class "pure-u-1 pure-u-md-8-24"
+                (:h1 :class "feature-message" (str heading))
+                (:p :class "feature-description" (str description)))
+          (:div :class "pure-u-1 pure-u-md-1-24") ; used as a spacer
+          (:div :class "pure-u-1 pure-u-md-15-24"
+                (:video :width "100%"
+                        (:source :src (concatenate 'string "/static/" video-file ".mov"))
+                        (:source :src (concatenate 'string "/static/" video-file ".webm")))))))
+
 :contents
 $(xml
    (:div :class "pure-g splash"
@@ -13,14 +26,16 @@ $(xml
                (:a :class "pure-button headline-button" :href (page-address "download") "Download")
                (:a :class "pure-button headline-button" :href "https://github.com/next-browser/next" "☆ Star on Github")
                (:a :class "pure-button headline-button" :href "https://github.com/next-browser/next/blob/master/documents/MANUAL.org" "Manual")))
-   (:div :class "pure-g feature"
-         (:div :class "pure-u-1 pure-u-md-15-24"
-               (:video :id "TreeHistory" :width "100%"
-                       (:source :src "/static/jump_heading.mov")
-                       (:source :src "/static/jump_heading.webm")))
-         (:div :class "pure-u-1 pure-u-md-1-24")
-         (:div :class "pure-u-1 pure-u-md-8-24"
-               (:h1 :class "feature-message" "Jump Headings - Find it!")
-               (:p :class "feature-description" "Jump exactly where you want to. Move through long documents quickly to find what you need."))))
-
-;; make function for each feature
+   (:a :name "features")
+   (str (feature-row "jump_heading"
+                     "Jump Headings - Find it!"
+                     "Jump exactly where you want to. Move through long documents quickly to find what you need. No more wasted searching."))
+   (str (feature-row "tab_switch"
+                     "Fuzzy Completion—Everywhere"
+                     "Be quicker. Switch tabs, open bookmarks, load urls, and do it lightning fast with fuzzy narrowing completion."))
+   (str (feature-row "tree_forward"
+                     "Tree History - Lose Nothing!"
+                     "Don't lose track of where you've been. With next every page you've visited is always accessible."))
+   (str (feature-row "fast_navigation"
+                     "Go Mouseless"
+                     "Do everything with the keyboard. Don't let your browser get in the way of your workflow")))
