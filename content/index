@@ -12,4 +12,15 @@ $(xml
          (:div :class "pure-u-1" :style "text-align:center"
                (:a :class "pure-button headline-button" :href (page-address "download") "Download")
                (:a :class "pure-button headline-button" :href "https://github.com/next-browser/next" "☆ Star on Github")
-               (:a :class "pure-button headline-button" :href "https://github.com/next-browser/next/blob/master/documents/MANUAL.org" "Manual"))))
+               (:a :class "pure-button headline-button" :href "https://github.com/next-browser/next/blob/master/documents/MANUAL.org" "Manual")))
+   (:div :class "pure-g feature"
+         (:div :class "pure-u-1 pure-u-md-15-24"
+               (:video :id "TreeHistory" :width "100%"
+                       (:source :src "/static/jump_heading.mov")
+                       (:source :src "/static/jump_heading.webm")))
+         (:div :class "pure-u-1 pure-u-md-1-24")
+         (:div :class "pure-u-1 pure-u-md-8-24"
+               (:h1 :class "feature-message" "Jump Headings - Find it!")
+               (:p :class "feature-description" "Jump exactly where you want to. Move through long documents quickly to find what you need."))))
+
+;; make function for each feature
