@@ -1,14 +1,14 @@
 $(xml
    (:html :lang "en" :xmlns "http://www.w3.org/1999/xhtml"
-    (:head
-     (:meta :charset "UTF-8")
-     (:meta :name "viewport" :content "width=device-width, initial-scale=1.0")
-     (:link :href "/static/pure-min.css" :rel "stylesheet" :type "text/css")
-     (:link :href "/static/grids-responsive-min.css" :rel "stylesheet" :type "text/css")
-     (:link :href "/static/style.css" :rel "stylesheet" :type "text/css")
-     (:title (str (when (bound? title) (echo title " — ")))
-             (str site-name)))
-    (:body 
-     (str nav)
-     (str contents)))
-   (:script :src "/static/menu.js" :type "text/javascript"))
+          (:head
+           (:meta :charset "UTF-8")
+           (:meta :name "viewport" :content "width=device-width, initial-scale=1.0")
+           (:link :href "/static/pure-min.css" :rel "stylesheet" :type "text/css")
+           (:link :href "/static/grids-responsive-min.css" :rel "stylesheet" :type "text/css")
+           (:link :href "/static/style.css" :rel "stylesheet" :type "text/css")
+           (:title (str (when (bound? title) (echo title " — ")))
+                   (str site-name)))
+          (:body
+           (str nav)
+           (str contents))
+          (:script :src "/static/menu.js" :type "text/javascript")))

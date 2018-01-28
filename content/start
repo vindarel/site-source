@@ -1,0 +1,6 @@
+:template
+start.html
+
+:contents
+$(xml
+  (:h1 "Hello World"))
