@@ -1,8 +1,5 @@
-#+html: <img src="assets/icon_256x256.png" align="right"/>
-* nEXT Browser Website
-nEXT is the fastest productivity browser. It is designed from the
-ground up to be customizable for your workflow. nEXT Browser is the
-infinitely EXTensible browser.
-
+* next browser website
 This repository contains the source for the main page available at:
 [[https://next-browser.github.io]].
+
+The website is generated automatically via [[https://github.com/next-browser/site-generator][site-generator]].
