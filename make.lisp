@@ -10,4 +10,4 @@
 
 (uiop:run-program "rm export/static" :ignore-error-status t) ; remove symlink
 (uiop:run-program "cp -r ./static export/static") ; copy files over
-
+(uiop:run-program "rm .database" :ignore-error-status t) ; clear database
