@@ -4,8 +4,8 @@
 
 (let* ((current-directory (uiop:getcwd))
        (output-directory (merge-pathnames "export/" current-directory)))
+  (ensure-directories-exist output-directory)
   (setf *site-dir* output-directory)
-  (print *site-dir*)
   (generate-site current-directory))
 
 (uiop:run-program "rm export/static" :ignore-error-status t) ; remove symlink
