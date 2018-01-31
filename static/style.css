@@ -136,7 +136,17 @@ a {
     .headline-button {
         font-size:100%;
         margin: .5em;
-    }    
+        min-width:8em;
+    }
+    .call-to-action-left {
+        text-align:center;
+    }
+    .call-to-action-center {
+        text-align:center;
+    }
+    .call-to-action-right {
+        text-align:center;
+    }
 }
 
 @media screen and (min-width: 48em) {
@@ -162,6 +172,15 @@ a {
     .headline-button {
         font-size:140%;
         margin: .5em;
+    }
+    .call-to-action-left {
+        text-align:right;
+    }
+    .call-to-action-center {
+        text-align:center;
+    }
+    .call-to-action-right {
+        text-align:left;
     }
 }
 
