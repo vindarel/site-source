@@ -74,6 +74,10 @@ a {
     }
     .custom-toggle {
         display: block;
+        top: 0.5em;
+    }
+    .custom-wrapper {
+        padding-top: 0.5em;
     }
 }
 
