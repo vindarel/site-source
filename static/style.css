@@ -103,6 +103,10 @@ a {
     text-decoration:none;
 }
 
+.headline-button {
+    min-width:8em;
+}
+
 @media (max-width: 47.999em) {
     .custom-menu-3 {
         text-align: left;
@@ -133,11 +137,6 @@ a {
     .feature-description {
         font-size:100%;
     }
-    .headline-button {
-        font-size:100%;
-        margin: .5em;
-        min-width:8em;
-    }
     .call-to-action-left {
         text-align:center;
     }
@@ -146,6 +145,10 @@ a {
     }
     .call-to-action-right {
         text-align:center;
+    }
+    .headline-button {
+        font-size:100%;
+        margin: .5em;
     }
 }
 
