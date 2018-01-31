@@ -1,3 +1,16 @@
+body {
+    max-width: 1024px;
+    margin:auto;
+    background-color: black;
+    color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+a {
+    color: white;
+}
+
 .custom-wrapper {
     border-bottom: solid 1px rgb(200, 200, 200);
     max-width: 1024;
@@ -9,10 +22,6 @@
     transition: height 0.5s;
     font-size:110%;
     padding-top: 2em;
-}
-
-a {
-    color: white;
 }
 
 .custom-wrapper.open {
@@ -68,47 +77,6 @@ a {
     transform: rotate(-45deg);
 }
 
-@media (max-width: 47.999em) {
-    .custom-menu-3 {
-        text-align: left;
-    }
-    .custom-toggle {
-        display: block;
-        top: 0.5em;
-    }
-    .custom-wrapper {
-        padding-top: 0.5em;
-    }
-}
-
-.splash {
-    padding-top:4em;
-}
-
-body {
-    max-width: 1024px;
-    margin:auto;
-    background-color: black;
-    color: white;
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-.pure-menu-link {
-    color: rgb(220, 220, 220);
-}
-
-.pure-menu-heading {
-    text-transform:none;
-    font-weight: bold;
-}
-
-.pure-menu-brand {
-    text-transform:none;
-    font-weight: bold;
-    text-decoration:none;
-}
-
 .rainbow {
     font-size:150%;
 }
@@ -128,6 +96,88 @@ body {
 .rainbow .t {
     font-weight: bold;
     color: #ff0000;
+}
+
+.headline-title {
+    margin:0em;
+    text-decoration:none;
+}
+
+@media (max-width: 47.999em) {
+    .custom-menu-3 {
+        text-align: left;
+    }
+    .custom-toggle {
+        display: block;
+        top: 0.5em;
+    }
+    .custom-wrapper {
+        padding-top: 0.5em;
+    }
+    .headline-title {
+        font-size: 30vw;
+    }
+    .headline-message {
+        font-size: 8vw;
+    }
+    .splash {
+        padding-top:1em;
+    }
+    .feature {
+        padding-top:4em;
+    }
+    .feature-message {
+        font-size: 150%;
+        margin-top: 0em;
+    }
+    .feature-description {
+        font-size:100%;
+    }
+    .headline-button {
+        font-size:100%;
+        margin: .5em;
+    }    
+}
+
+@media screen and (min-width: 48em) {
+    .headline-message {
+        font-size: 600%;
+    }
+    .headline-title {
+        font-size: 2275%;
+    }
+    .splash {
+        padding-top:4em;
+    }
+    .feature {
+        padding-top:12em;
+    }
+    .feature-message {
+        font-size: 350%;
+        margin-top: 0em;
+    }
+    .feature-description {
+        font-size:120%;
+    }
+    .headline-button {
+        font-size:140%;
+        margin: .5em;
+    }
+}
+
+.pure-menu-link {
+    color: rgb(220, 220, 220);
+}
+
+.pure-menu-heading {
+    text-transform:none;
+    font-weight: bold;
+}
+
+.pure-menu-brand {
+    text-transform:none;
+    font-weight: bold;
+    text-decoration:none;
 }
 
 .pure-menu-item {
@@ -167,51 +217,6 @@ blink {
 
 .call-out {
     text-align:center;
-}
-
-.headline-message {
-    font-size: 300%;
-}
-
-.headline-title {
-    font-size: 2275%;
-    margin:0em;
-    text-decoration:none;
-}
-
-.feature-message {
-    font-size: 350%;
-    margin-top: 0em;
-}
-
-.feature-description {
-    font-size:120%;
-}
-
-.feature {
-    padding-top:12em;
-
-}
-
-.headline-button {
-    font-size:140%;
-    margin: .5em;
-}
-
-.footer-message {
-    font-size: 200%;
-}
-
-@media screen and (min-width: 48em) {
-    .headline-message {
-	font-size: 600%;
-    }
-    .call-out {
-	text-align:left;
-    }
-    .footer-message {
-	font-size: 450%;
-    }
 }
 
 @-webkit-keyframes blink {
