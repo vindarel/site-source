@@ -8,8 +8,8 @@
           (:div :class "pure-u-1 pure-u-md-1-24") ; used as a spacer
           (:div :class "pure-u-1 pure-u-md-15-24"
                 (:video :preload "" :controls "" :autoplay "" :loop "" :width "100%"
-                        (:source :src (concatenate 'string "/static/" video-file ".mov"))
-                        (:source :src (concatenate 'string "/static/" video-file ".webm")))))))
+                        (:source :src (concatenate 'string "/static/video/" video-file ".mov"))
+                        (:source :src (concatenate 'string "/static/video/" video-file ".webm")))))))
 (defun feature-row-text (heading description)
   (xml
     (:div :class "pure-g feature"

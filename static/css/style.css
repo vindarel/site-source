@@ -11,6 +11,12 @@ a {
     color: white;
 }
 
+figure {
+    margin: 0;
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+}
+
 .custom-wrapper {
     border-bottom: solid 1px rgb(200, 200, 200);
     max-width: 1024;
