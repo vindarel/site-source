@@ -1,3 +1,13 @@
+:cl-environment
+(defun video (video-file title caption)
+  (xml
+    (:div :class "video"
+     (:h2 (str title))
+     (:video :preload "" :controls "" :autoplay "" :loop "" :width "100%"
+             (:source :src (concatenate 'string "/static/video/" video-file ".mov"))
+             (:source :src (concatenate 'string "/static/video/" video-file ".webm")))
+     (str caption))))
+
 :contents
 $(xml (:article (str (post-content))
                 (:span :class "prev"

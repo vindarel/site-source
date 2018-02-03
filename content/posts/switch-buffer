@@ -3,28 +3,57 @@ Switch Tabs Quickly
 
 :post-content
 $(xml
-  (:h1 "Tabs Suck.")
-  (:p "As a paradigm, tabs work for well for inexperienced users, they
+   (:div :class "section"
+         (:h1 "Tabs Suck.")
+         (:p "As a paradigm, tabs work for well for inexperienced users, they
 provide a simple visual representation that's easy to follow.
-Unfortunately that's where the benefits of tabs end. Users often spend
+Unfortunately that's where the benefits end. Users often spend
 several frustrating minutes combing through tabs to find what they are
 looking for. To get beyond this point, and do some real work, you need
 something more powerful.")
-   (:figure
-    (:img :src "/static/img/tab_overflow.png")
-    (:figcaption "Enjoy your tab search."))
-  (:h1 "What is a Powerful Tool?")
-  (:p "Before we discuss what that tool is, let's define what makes a tool
-more powerful in this context:")
-  (:ul
-   (:li (:b "Scale: ") "It should not be slower to use with more tabs ")
-   (:li (:b "Access time: ") "The time to access a tab should be quick")
-   (:li (:b "Do what I mean: ") "It should be smart, it should know what I
-want."))
-  (:h1 "Next: Instant Switch Tabs")
-  (:p "Instead of using a tab bar, next uses a smart list of tabs.
+         (:figure
+          (:img :src "/static/img/tab_overflow.png")
+          (:figcaption "Enjoy your tab search.")))
+   (:div :class "section"
+         (:h1 "What is a Powerful Tool?")
+         (:p "Before we discuss what that tool is, let's define what makes a tool
+better (in this context):")
+         (:ul
+          (:li (:b "Scale: ") "It should not be slower to use with more tabs ")
+          (:li (:b "Access time: ") "The time to access a tab should be quick")
+          (:li (:b "Do what I mean: ") "It should be smart, it should know what I want.")))
+   (:div :class "section"
+         (:h1 "Next: Instant Switch Tabs")
+         (:p "Instead of using a tab bar, next uses a smart list of tabs.
 What does this mean? This means switching to any tab is as easy as
 typing any part of the title.")
-  (:p "No matter how many tabs you open, jumping to any of them takes
+         (:p "No matter how many tabs you open, jumping to any of them takes
 the exact same amount of time- none at all. No more tab hunting, no
-more scaling pains-use a smart browser that helps you get it done."))
+more scaling pains-use a smart browser that helps you get it done.")
+         (:p "Let's look at a side by side between next and a traditional tab
+based browser. This examples compares the task of looking through a list
+of tabs to find 'sawfish'."))
+   (:div :class "pure-g"
+         (:div :class "pure-u-1"
+               (str (video "sawfish_switch_tab_next" "Finding sawfish in next"
+                           "Next does the work for you, ask it a question and it will find Sawfish")))
+         (:div :class "pure-u-1"
+               (str (video "sawfish_switch_tab_chrome" "Finding sawfish in a traditional browser"
+                           "A Traditional browser makes you do the work of finding your tabs."))))
+   (:div :class "section"
+         (:h1 "Conclusions")
+         (:p "Traditional browsers make you do the work. They show you
+         a bunch of tabs and say 'here, find what you need'. Next
+         flips this idea on its head and instead asks you, 'what do
+         you need? let me get it for you!' This is a much more
+         powerful pattern of gathering information, it scales
+         beautifully and helps you get work done."))
+   (:div :class "section"
+         (:h1 "Get Started with next browser:")
+         (:div :class "pure-g"
+               (:div :class "pure-u-1 pure-u-md-1-3 call-to-action-left"
+                     (:a :class "pure-button headline-button" :href (page-address "download") "Download"))
+               (:div :class "pure-u-1 pure-u-md-1-3 call-to-action-center"
+                     (:a :class "pure-button headline-button" :href "https://github.com/next-browser/next" "☆ Star on Github"))
+               (:div :class "pure-u-1 pure-u-md-1-3 call-to-action-right"
+                     (:a :class "pure-button headline-button" :href "https://github.com/next-browser/next/blob/master/documents/MANUAL.org" "Manual")))))

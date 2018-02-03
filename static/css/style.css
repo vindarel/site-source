@@ -263,3 +263,12 @@ blink {
 .pure-menu-active>.pure-menu-link, .pure-menu-link:focus, .pure-menu-link:hover {
     background-color: #222;
 }
+
+.video {
+    padding-top: 1em;
+    padding-bottom: 3em;
+}
+
+.section {
+    padding-bottom: 1.5em;
+}
