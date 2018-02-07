@@ -1,0 +1,27 @@
+:title
+Hooking into Bookmarks
+
+:post-content markup=org
+* Using Hooks to Smart Program Your Browser Bookmarks
+First time posting in org-mode yay!
+* Another Topic
+Look I am talking about this 
+** This is a subtopic
+This is related to the parent topic, Even though images and tables are
+prominent examples of captioned structures, the same caption mechanism
+can apply to many others (e.g., LaTeX equations, source code
+blocks). Depending on the export back-end, those may or may not be
+handled.
+
+#+NAME: lispy-demo
+#+BEGIN_SRC lisp
+(defun open-new-shell ()
+  (set-visible-active-buffer
+   (generate-new-buffer "*shell*" (shell-mode))))
+#+END_SRC
+
+Some text after the code snippet.
+
+[[/static/img/tab_overflow.png][Enjoy your tab search.]]
+
+Text after the image.
