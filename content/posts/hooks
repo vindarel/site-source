@@ -2,26 +2,164 @@
 Hooking into Bookmarks
 
 :post-content markup=org
-* Using Hooks to Smart Program Your Browser Bookmarks
-First time posting in org-mode yay!
-* Another Topic
-Look I am talking about this 
-** This is a subtopic
-This is related to the parent topic, Even though images and tables are
-prominent examples of captioned structures, the same caption mechanism
-can apply to many others (e.g., LaTeX equations, source code
-blocks). Depending on the export back-end, those may or may not be
-handled.
+* Using Hooks to Smart Program Your Browser
+Hooks are a great way to extend a workflow by triggering actions upon
+events. In the world of a web browser, there are a ton of events, page
+loaded, dom available, page rendered, etc. In addition to the events
+fired off by normal processing of web pages there are a large set of
+events which include actions by the user. These are not normally
+hookable, but in next, they are.
 
-#+NAME: lispy-demo
+Hooking into the events fired off by the user allows the creation of
+optimized workflows, and extendable macros written in Lisp. A few
+examples of user actions can be seen below:
+
+- Delete Tab
+- Bookmark Page
+- Backwards
+- Forwards
+- Open Link    
+- Zoom in Page
+- Zoom out Page
+- Scroll to Top
+
+By hooking into these actions we can fire off macros to extend the
+functionality of our browser.
+
+* A Practical Example: Bookmarks
+Let's hook into the bookmark page event to trigger interesting
+behavior. First let's look at the default implementation of
+*bookmark-current-page* which does, as the docstring suggests
+"Bookmark the currently opened page in the active buffer."
+
+#+NAME: bookmark-current-page
 #+BEGIN_SRC lisp
-(defun open-new-shell ()
-  (set-visible-active-buffer
-   (generate-new-buffer "*shell*" (shell-mode))))
+(define-command bookmark-current-page ()
+  "Bookmark the currently opened page in the active buffer."
+  (let ((db (sqlite:connect
+	     (truename (probe-file *bookmark-db-path*))))
+	(url (name *active-buffer*)))
+    (sqlite:execute-non-query
+     db "insert into bookmarks (url) values (?)" url)
+    (sqlite:disconnect db)))
 #+END_SRC
 
-Some text after the code snippet.
+In the above example, the code will open the bookmark database, grab
+the url of the currently active-buffer, write it into the database,
+and then close the database.
 
-[[/static/img/tab_overflow.png][Enjoy your tab search.]]
+** Downloading our bookmarks and appending them to our notes
+That's great, now our bookmark is in a database of bookmarks. Wouldn't
+it be cool though if our bookmarks were automatically appended to our
+notes we keep on our current activities? Well, of course it would be!
+We could write a simple CL function just for that!
 
-Text after the image.
+#+NAME: download-web-page-to-notes
+#+BEGIN_SRC lisp
+(defun download-web-page-to-notes ()
+  (let* ((url (interface:web-view-get-url (view *active-buffer*)))
+         (web-page-contents (drakma:http-request url))
+         (body-contents
+           (lquery:$1
+             (initialize web-page-contents) "body" (children) (serialize))))
+    (with-open-file (str "~/Downloads/notes.txt"
+                         :direction :output
+                         :if-exists :supersede
+                         :if-does-not-exist :create)
+      (format str "~s" body-contents))))
+#+END_SRC
+
+The above function will load the web page into a string via [[https://edicl.github.io/drakma/][drakma]],
+pass it into [[https://github.com/Shinmera/lquery][lquery]], and then simply write it to a file. Of course our
+function could be improved, but this is the most simple version.
+
+** Hooking in to the bookmark save process
+Now that we've written our super short function, we should be able to
+hook into the =bookmark-current-page= command. This is done like this:
+
+#+NAME: hook-into-bookmark-current-page
+#+BEGIN_SRC lisp
+(add-function-to-hook (:bookmark-current-page
+                       'download-web-page-to-notes
+                       'download-web-page-to-notes)
+#+END_SRC
+
+The arguments are =hook-name=, =function-key=, and =function=. The
+reason we have both a =function-key= and a =function= is because the
+key allows us to pass anonymous functions which we can later unhook.
+
+Now that we've setup our hook, whenever the user executes the command
+=bookmark-current-page=, the page will automatically be downloaded and
+appended to their notes!
+
+* The next Hook System
+Within next, every hook is part of a global hash called
+=*available-hooks*=. This hash contains a mapping of =:keyword= to
+another hashtable, which contains a mapping of =function-name= to the
+actual function. To help make this a little more concrete let's tie it
+back to our original example.
+
+In our original example =*available-hooks*= will have a key
+=:bookmark-current-page=, the value at this key will be another
+hashtable. This hashtable will contain a key called
+=download-web-page-to-notes=. The value at
+=download-web-page-to-notes= will be the function
+=download-web-page-to-notes=. The values contained within the
+=book-mark-current-page= hashtable will all be executed wherever
+=(run-hook :bookmark-current-page)= appears.
+
+** All user commands have hooks
+One feature that makes next unique is the special form
+=define-command=, a macro which wraps =defun=. Most importantly, the
+macro places the following form within the body of the function:
+
+#+NAME: hook-syntax
+#+BEGIN_SRC lisp
+(run-hook :bookmark-current-page)
+#+END_SRC
+
+This snippet of code executes all hooks registered with the symbol
+=:bookmark-current-page=. This symbol is automatically registered in
+the =keyword= package. Therefore, any defined command has an
+associated hook that can be hooked into!
+
+** Tying it all together
+If you tie all of this in together, you'll see that the hook system is
+extremely elegant and light. All of next's hook code is a mere 24 lines.
+
+#+NAME: hook.lisp
+#+BEGIN_SRC lisp
+;;; hook.lisp --- functions for adding and removing hooks
+
+(in-package :next)
+
+(defun add-function-to-hook (hook-name function-key function)
+  (let ((hook-functions-hash (alexandria:ensure-gethash
+                              hook-name
+                              *available-hooks*
+                              (make-hash-table :test #'equalp))))
+    (setf (gethash function-key hook-functions-hash) function)))
+
+(defun execute-entry (key value)
+  (declare (ignore key))
+  (funcall value))
+
+(defun run-hook (hook-name)
+  (let ((hook-functions-hash (gethash hook-name *available-hooks*)))
+    (when hook-functions-hash
+      (maphash 'execute-entry hook-functions-hash))))
+
+(defun remove-hook (hook-name function-key)
+  (let ((hook-functions-hash (gethash hook-name *available-hooks*)))
+    (remhash function-key hook-functions-hash)))
+#+END_SRC
+
+* Conclusions
+Hooks can be a great way to extend your browser. There are of course
+downsides to hooks. For example, consider a hooked function that
+depends on the execution of another hooked function, how do we ensure
+that they execute in the correct order? This is a difficult problem,
+and outside the scope of the hook use case.
+
+Despite this major drawback, hooks present a very simple and effective
+mechanism to chain behavior in your workflows. Thanks for reading!
