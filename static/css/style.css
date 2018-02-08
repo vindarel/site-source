@@ -272,3 +272,8 @@ blink {
 .section {
     padding-bottom: 1.5em;
 }
+
+.post-button-call-to-action {
+    min-width:10em;
+    margin: .5em;
+}
