@@ -4,11 +4,15 @@ Hooking into Bookmarks
 :post-content markup=org
 * Using Hooks to Smart Program Your Browser
 Hooks are a great way to extend a workflow by triggering actions upon
-events. In the world of a web browser, there are a ton of events, page
-loaded, dom available, page rendered, etc. In addition to the events
-fired off by normal processing of web pages there are a large set of
-events which include actions by the user. These are not normally
-hookable, but in next, they are.
+events. What hooks are is a mechanism to call a function at a given
+time, simply put, to "hook" into a function means to execute at that
+time.
+
+In the world of a web browser, there are a ton of events, page loaded,
+dom available, page rendered, etc. In addition to the events fired off
+by normal processing of web pages there are a large set of events
+which include actions by the user. These are not normally hookable,
+but in next, they are.
 
 Hooking into the events fired off by the user allows the creation of
 optimized workflows, and extendable macros written in Lisp. A few
@@ -18,10 +22,7 @@ examples of user actions can be seen below:
 - Bookmark Page
 - Backwards
 - Forwards
-- Open Link
-- Zoom in Page
-- Zoom out Page
-- Scroll to Top
+- ...
 
 By hooking into these actions we can fire off macros to extend the
 functionality of our browser.
@@ -51,8 +52,8 @@ and then close the database.
 ** Downloading our bookmarks and appending them to our notes
 That's great, now our bookmark is in a database of bookmarks. Wouldn't
 it be cool though if our bookmarks were automatically appended to our
-notes we keep on our current activities? Well, of course it would be!
-We could write a simple CL function just for that!
+notes? Well, of course it would be! We could write a simple Lisp
+function just for that!
 
 #+NAME: download-web-page-to-notes
 #+BEGIN_SRC lisp
@@ -69,9 +70,11 @@ We could write a simple CL function just for that!
       (format str "~s" body-contents))))
 #+END_SRC
 
-The above function will load the web page into a string via [[https://edicl.github.io/drakma/][drakma]],
-pass it into [[https://github.com/Shinmera/lquery][lquery]], and then simply write it to a file. Of course our
-function could be improved, but this is the most simple version.
+The above function will load the web page into a string via [[https://edicl.github.io/drakma/][drakma]] (an
+http library). After loading the web page into a string, it'll be
+passed to [[https://github.com/Shinmera/lquery][lquery]](a document parsing library). Finally, it will write
+the body of the document to a file. Of course our function could be
+improved, but this is the most simple version.
 
 ** Hooking in to the bookmark save process
 Now that we've written our super short function, we should be able to
@@ -92,6 +95,10 @@ Now that we've setup our hook, whenever the user executes the command
 =bookmark-current-page=, the page will automatically be downloaded and
 appended to their notes!
 
+Neat right? Now imagine, extending literally any command via hooks!
+Execute and do literally anything you want on your machine to create
+adapted, customized workflows to suit your needs.
+
 * The next Hook System
 Within next, every hook is part of a global hash called
 =*available-hooks*=. This hash contains a mapping of =:keyword= to
@@ -101,8 +108,11 @@ back to our original example.
 
 In our original example =*available-hooks*= will have a key
 =:bookmark-current-page=, the value at this key will be another
-hashtable. This hashtable will contain a key called
-=download-web-page-to-notes=. The value at
+hashtable. This hashtable contains all of the functions executed
+whenever the =:bookmark-current-page= hook is ran.
+
+This hashtable (located at =:bookmark-current-page= will contain a key
+called =download-web-page-to-notes=. The value at
 =download-web-page-to-notes= will be the function
 =download-web-page-to-notes=. The values contained within the
 =book-mark-current-page= hashtable will all be executed wherever
@@ -119,8 +129,7 @@ macro places the following form within the body of the function:
 #+END_SRC
 
 This snippet of code executes all hooks registered with the symbol
-=:bookmark-current-page=. This symbol is automatically registered in
-the =keyword= package. Therefore, any defined command has an
+=:bookmark-current-page=. Therefore, any defined command has an
 associated hook that can be hooked into!
 
 ** Tying it all together
