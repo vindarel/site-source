@@ -23,28 +23,28 @@ $(xml
           (:li (:b "Access time: ") "The time to access a tab should be quick")
           (:li (:b "Do what I mean: ") "It should be smart, it should know what I want.")))
    (:div :class "section"
-         (:h1 "next: Instant Switch Tabs")
-         (:p "Instead of using a tab bar, next uses a smart list of
+         (:h1 "Next: Instant Switch Tabs")
+         (:p "Instead of using a tab bar, Next uses a smart list of
               tabs.  What does this mean? This means switching to any
               tab is as easy as typing any part of the title.")
          (:p "No matter how many tabs you open, jumping to any of them
              takes the exact same amount of time- none at all. No more
              tab hunting, no more scaling pains.")
-         (:p "Let's look at a side by side between next and a
+         (:p "Let's look at a side by side between Next and a
               traditional tab based browser. This example compares
               the task of looking through a list of tabs to find
               'sawfish'."))
    (:div :class "pure-g"
          (:div :class "pure-u-1"
-               (str (video "sawfish_switch_tab_next" "Finding sawfish in next"
-                           "next does the work for you, ask it a question and it will find Sawfish")))
+               (str (video "sawfish_switch_tab_next" "Finding sawfish in Next"
+                           "Next does the work for you, ask it a question and it will find Sawfish")))
          (:div :class "pure-u-1"
                (str (video "sawfish_switch_tab_chrome" "Finding sawfish in a traditional browser"
                            "A Traditional browser makes you do the work of finding your tabs."))))
    (:div :class "section"
          (:h1 "Conclusions")
          (:p "Traditional browsers make you do the work. They show you
-         a bunch of tabs and say 'here, find what you need'. next
+         a bunch of tabs and say 'here, find what you need'. Next
          flips this idea on its head and instead asks you, 'what do
          you need? let me get it for you!' This is a much more
          powerful pattern of gathering information, it scales

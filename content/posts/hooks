@@ -12,7 +12,7 @@ In the world of a web browser, there are a ton of events, page loaded,
 dom available, page rendered, etc. In addition to the events fired off
 by normal processing of web pages there are a large set of events
 which include actions by the user. These are not normally hookable,
-but in next, they are.
+but in Next, they are.
 
 Hooking into the events fired off by the user allows the creation of
 optimized workflows, and extendable macros written in Lisp. A few
@@ -99,8 +99,8 @@ Neat right? Now imagine, extending literally any command via hooks!
 Execute and do literally anything you want on your machine to create
 adapted, customized workflows to suit your needs.
 
-* The next Hook System
-Within next, every hook is part of a global hash called
+* The Next Hook System
+Within Next, every hook is part of a global hash called
 =*available-hooks*=. This hash contains a mapping of =:keyword= to
 another hashtable, which contains a mapping of =function-name= to the
 actual function. To help make this a little more concrete let's tie it
@@ -119,7 +119,7 @@ called =download-web-page-to-notes=. The value at
 =(run-hook :bookmark-current-page)= appears.
 
 ** All user commands have hooks
-One feature that makes next unique is the special form
+One feature that makes Next unique is the special form
 =define-command=, a macro which wraps =defun=. Most importantly, the
 macro places the following form within the body of the function:
 
@@ -134,7 +134,7 @@ associated hook that can be hooked into!
 
 ** Tying it all together
 If you tie all of this in together, you'll see that the hook system is
-extremely elegant and light. All of next's hook code is a mere 19 lines.
+extremely elegant and light. All of Next's hook code is a mere 19 lines.
 
 #+NAME: hook.lisp
 #+BEGIN_SRC lisp
