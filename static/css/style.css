@@ -277,3 +277,16 @@ blink {
     min-width:10em;
     margin: .5em;
 }
+
+code {
+    background-color: rgb(45, 45, 45);
+}
+
+.sourceCode {
+    display:block;
+    padding:0.25em;
+}
+
+p {
+    line-height: 1.25em;
+}

@@ -111,7 +111,7 @@ In our original example =*available-hooks*= will have a key
 hashtable. This hashtable contains all of the functions executed
 whenever the =:bookmark-current-page= hook is ran.
 
-This hashtable (located at =:bookmark-current-page= will contain a key
+This hashtable (located at =:bookmark-current-page=) will contain a key
 called =download-web-page-to-notes=. The value at
 =download-web-page-to-notes= will be the function
 =download-web-page-to-notes=. The values contained within the
@@ -134,14 +134,10 @@ associated hook that can be hooked into!
 
 ** Tying it all together
 If you tie all of this in together, you'll see that the hook system is
-extremely elegant and light. All of next's hook code is a mere 24 lines.
+extremely elegant and light. All of next's hook code is a mere 19 lines.
 
 #+NAME: hook.lisp
 #+BEGIN_SRC lisp
-;;; hook.lisp --- functions for adding and removing hooks
-
-(in-package :next)
-
 (defun add-function-to-hook (hook-name function-key function)
   (let ((hook-functions-hash (alexandria:ensure-gethash
                               hook-name
