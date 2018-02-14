@@ -73,6 +73,8 @@ the body  of the document  to a file,  via [[https://github.com/vindarel/cl-str]
 library). Of course our function could be
 improved, but this is the most simple version.
 
+Don't miss the [[https://lispcookbook.github.io/cl-cookbook/][Common Lisp Cookbook]] if you need a good resource.
+
 ** Hooking in to the bookmark save process
 Now that we've written our super short function, we should be able to
 hook into the =bookmark-current-page= command. This is done like this:
