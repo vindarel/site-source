@@ -59,21 +59,18 @@ function just for that!
 #+BEGIN_SRC lisp
 (defun download-web-page-to-notes ()
   (let* ((url (interface:web-view-get-url (view *active-buffer*)))
-         (web-page-contents (drakma:http-request url))
+         (web-page-contents (dex:get url))
          (body-contents
            (lquery:$1
              (initialize web-page-contents) "body" (children) (serialize))))
-    (with-open-file (str "~/Downloads/notes.txt"
-                         :direction :output
-                         :if-exists :supersede
-                         :if-does-not-exist :create)
-      (format str "~s" body-contents))))
+    (str:to-file "~/Downloads/notes.txt" body-contents)))
 #+END_SRC
 
-The above function will load the web page into a string via [[https://edicl.github.io/drakma/][drakma]] (an
+The above function will load the web page into a string via [[http://quickdocs.org/dexador/][dexador]] (an
 http library). After loading the web page into a string, it'll be
 passed to [[https://github.com/Shinmera/lquery][lquery]](a document parsing library). Finally, it will write
-the body of the document to a file. Of course our function could be
+the body  of the document  to a file,  via [[https://github.com/vindarel/cl-str][str]] (a  string manipulation
+library). Of course our function could be
 improved, but this is the most simple version.
 
 ** Hooking in to the bookmark save process
